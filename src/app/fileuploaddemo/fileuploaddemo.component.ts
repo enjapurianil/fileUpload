@@ -143,7 +143,7 @@ export class FileuploaddemoComponent implements OnInit {
   saveImage(event: any) {
     debugger
     // console.log(event)
-    console.log(event.target.files)
+   // console.log(event.target.files)
     if (event.target.files) {
       for (let index = 0; index < event.target.files.length; index++) {
         if (event.target.files[index].size <= 40960) {
