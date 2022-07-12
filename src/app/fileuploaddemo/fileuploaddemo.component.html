@@ -1,0 +1,95 @@
+<!-- File upload
+<img [src] =""> -->
+<div>
+    <input type="file" (change)="saveImage($event);" multiple>
+</div>
+<div *ngIf="isImageEnable == true">
+    <div *ngFor="let url of urllist">
+        <img [src]="url.files" alt="" width="200" height="200"  >
+    </div>
+</div>
+<button (click)="save()">save</button>
+<div #screen>
+    <div *ngFor="let img of files ;let i= index">
+        <p>image {{i+1}}</p>
+        <img [src]="img.files" width="200" height="200" alt="">
+    </div>
+</div>
+<!-- EXCEl Sheet -->
+
+<p>-+
+
+    .0
+    74185`cv91
+    '---+--*+
+    `1 Exporting an excel file of type .xslx !!!
+</p>
+<p>Export as XLSX by clicking the below button</p>
+
+<button (click)="exportAsXLSX()">export to XL</button>
+<table>
+    <tr>
+        <td>Eid</td>
+        <td>Ename</td>
+        <td>Esal</td>
+    </tr>
+    <tr *ngFor="let item of data">
+        <td>{{item.eid}}</td>
+        <td>{{item.ename}}</td>
+        <td>{{item.esal}}</td>
+    </tr>
+</table>
+
+<!-- screenshot -->
+<div>
+    <h1>Hey!</h1>
+    <p>some content</p>
+</div>
+
+<button (click)="capture()">Take</button>
+
+<img [src]="imageView">
+<!-- pdf export -->
+
+<!-- <div class="container">  
+    <h1>This is an Angular App!</h1>  
+    <input type="button" value="Download PDF" class="btn btn-success" (click)="SavePDF()">  
+    <br/><br/>  
+    <div class="container" id="content" #content>  
+        <table class="table table-dark">  
+            <tr>  
+                <th>Id</th>  
+                <th>Name</th>  
+                <th>Salary</th>  
+            </tr>  
+            <tr *ngFor="let item of Data">  
+                <th>{{item.Id}}</th>  
+                <th>{{item.Name}}</th>  
+                <th>{{item.Salary}}</th>  
+            </tr>  
+        </table>  
+    </div> 
+</div>   -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-8" id="htmlData">
+            <table class="table table-bordered">
+                <tr class="table-primary">
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+                <tr *ngFor="let user of USERS">
+                    <th>{{user.id}}</th>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phone}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-4 text-right">
+            <button class="btn btn-success btn-block" (click)="openPDF()">Download PDF</button>
+        </div>
+    </div>
+</div>
